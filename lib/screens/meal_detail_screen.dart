@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/dummy_data.dart';
-import 'package:meal_app/models/meal.dart';
 
 class MealDetailsScreen extends StatelessWidget {
   static const routeName = 'meal_details';
@@ -55,7 +54,7 @@ class MealDetailsScreen extends StatelessWidget {
                           ),
                           title: Text(selectedMeals.steps[index]),
                         ),
-                        index != selectedMeals.steps.length-1
+                        index != selectedMeals.steps.length - 1
                             ? Divider(
                                 thickness: 2,
                               )
@@ -69,6 +68,12 @@ class MealDetailsScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.delete),
+        onPressed: () {
+          Navigator.of(context).pop(mealId);
+        },
       ),
     );
   }
